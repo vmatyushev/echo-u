@@ -19,7 +19,7 @@ def listener(*mensajes):
             mi_bot.send_message(chat_id, text)
 
 mi_bot.set_update_listener(listener) #registrar la funcion listener  
-mi_bot.polling()
+mi_bot.polling(none_stop=True)
 
 while True: #No terminamos nuestro programa  
     pass
@@ -37,8 +37,8 @@ p = Popen(cmd, shell=True, stdin=PIPE, stdout=PIPE).stdout.read().split()
 #p = subprocess.Popen(cmd, shell=True, stdin=PIPE, stdout=PIPE, stderr=subprocess.STDOUT, close_fds=True)
 #while True:
  #   s = p.stdout.readline()
-  #  if not s: break
-   # print(s), 
+#  if not s: break
+# print(s), 
 print(p)
     
 cmd = 'uname -a'
