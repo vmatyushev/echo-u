@@ -19,10 +19,11 @@ def listener(*mensajes):
             bot.send_message(chat_id, text)
 
 bot.set_update_listener(listener) #registrar la funcion listener  
-bot.polling(none_stop=True)
+if __name__ == '__main__':
+    bot.polling(none_stop=True)
 
-while True: #No terminamos nuestro programa  
-    pass
+#while True: #No terminamos nuestro programa  
+#    pass
 
 
 #@bot.message_handler(content_types=["text"])
