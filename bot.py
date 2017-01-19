@@ -21,15 +21,15 @@ def listener(*mensajes):
             text = m.text
             p = Popen(cmd, shell=True, stdin=PIPE, stdout=PIPE).stdout.read().split()
             
-            bot.send_message(chat_id,"Me copio de tu texto")
+#            bot.send_message(chat_id,"Me copio de tu texto")
             bot.send_message(chat_id, p)
 
 #bot.set_update_listener(listener) #registrar la funcion listener  
 #if __name__ == '__main__':
 bot.polling(none_stop=True)
 
-#while True: #No terminamos nuestro programa  
-#    pass
+while True: #No terminamos nuestro programa  
+    pass
 
 
 #@bot.message_handler(content_types=["text"])
