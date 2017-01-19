@@ -35,7 +35,7 @@ print(p)
 #        stderr=subprocess.STDOUT, close_fds=True, cwd='/home/')
 #print(p.stdout.read())
 
-if __name__ == '__main__':
-     bot.polling(none_stop=True)
+#if __name__ == '__main__':
+ #    bot.polling(none_stop=True)
 
     
