@@ -2,17 +2,11 @@
 # -*- coding: utf-8 -*-
 import config
 import telebot
-
 import subprocess
-
 from subprocess import Popen, PIPE
-
 bot = telebot.TeleBot(config.token)
-
-
 cmd = 'uname -a'
 PIPE = subprocess.PIPE
-
 @bot.message_handler(content_types=["text"])
 p = Popen(cmd, shell=True, stdin=PIPE, stdout=PIPE).stdout.read().split()
 bot.send_message(chat_id, p)
