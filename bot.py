@@ -11,7 +11,7 @@ import subprocess
 PIPE = subprocess.PIPE
 p = subprocess.Popen(cmd, shell=True, stdin=PIPE, stdout=PIPE,
         stderr=subprocess.STDOUT, close_fds=True, cwd='/home/')
-print p.stdout.read()
+print(p.stdout.read())
 
 
 #cmd = 'uname -a'
