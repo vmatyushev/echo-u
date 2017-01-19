@@ -7,7 +7,7 @@ import subprocess
 
 from subprocess import Popen, PIPE
 
-mi_bot = telebot.TeleBot(config.token)
+bot = telebot.TeleBot(config.token)
 
 
 def listener(*mensajes):
@@ -15,11 +15,11 @@ def listener(*mensajes):
         chat_id = m.chat.id
         if m.content_type == 'text':
             text = m.text
-            mi_bot.send_message(chat_id,"Me copio de tu texto")
-            mi_bot.send_message(chat_id, text)
+            bot.send_message(chat_id,"Me copio de tu texto")
+            bot.send_message(chat_id, text)
 
-mi_bot.set_update_listener(listener) #registrar la funcion listener  
-mi_bot.polling(none_stop=True)
+bot.set_update_listener(listener) #registrar la funcion listener  
+bot.polling(none_stop=True)
 
 while True: #No terminamos nuestro programa  
     pass
