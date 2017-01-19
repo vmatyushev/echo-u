@@ -17,7 +17,7 @@ p = subprocess.Popen(cmd, shell=True, stdin=PIPE, stdout=PIPE,
 print(p.stdout.read())
 
 
-#bot.send_message(chat_id, p.stdout.read())
+bot.send_message(chat_id, p.stdout.read())
 
 
 #cmd = 'uname -a'
