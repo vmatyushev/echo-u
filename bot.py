@@ -5,13 +5,22 @@ import telebot
 import subprocess
 from subprocess import Popen, PIPE
 bot = telebot.TeleBot(config.token)
-cmd = 'uname -a'
+
+cmd = 'pwd'
+import subprocess
 PIPE = subprocess.PIPE
-@bot.message_handler(content_types=["text"])
-f = subprocess.Popen(cmd, shell=True, stdin=PIPE, stdout=PIPE)
-bot.send_message(chat_id, f)
-if __name__ == '__main__':
-    bot.polling(none_stop=True)
+p = subprocess.Popen(cmd, shell=True, stdin=PIPE, stdout=PIPE,
+        stderr=subprocess.STDOUT, close_fds=True, cwd='/home/')
+print p.stdout.read()
+
+
+#cmd = 'uname -a'
+#PIPE = subprocess.PIPE
+#@bot.message_handler(content_types=["text"])
+#f = subprocess.Popen(cmd, shell=True, stdin=PIPE, stdout=PIPE)
+#bot.send_message(chat_id, f)
+#if __name__ == '__main__':
+#    bot.polling(none_stop=True)
 
 
 
