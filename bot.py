@@ -18,9 +18,9 @@ def listener(*mensajes):
             bot.send_message(chat_id,"Me copio de tu texto")
             bot.send_message(chat_id, text)
 
-bot.set_update_listener(listener) #registrar la funcion listener  
-if __name__ == '__main__':
-    bot.polling(none_stop=True)
+#bot.set_update_listener(listener) #registrar la funcion listener  
+#if __name__ == '__main__':
+bot.polling(none_stop=True)
 
 #while True: #No terminamos nuestro programa  
 #    pass
