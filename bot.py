@@ -11,7 +11,13 @@ bot = telebot.TeleBot(config.token)
 def repeat_all_messages(message): # Название функции не играет никакой роли, в принципе
     bot.send_message(message.chat.id, message.text)
     
-subprocess.call('uname -a', shell=True)
+cmd = 'uname -a'
+PIPE = subprocess.PIPE
+p = subprocess.Popen(cmd, shell=True, stdin=PIPE, stdout=PIPE,
+        stderr=subprocess.STDOUT, close_fds=True, cwd='/home/')
+print p.stdout.read()
 
 if __name__ == '__main__':
      bot.polling(none_stop=True)
+
+    
