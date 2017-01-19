@@ -7,16 +7,16 @@ import subprocess
 
 bot = telebot.TeleBot(config.token)
   
-@bot.message_handler(content_types=["text"])
-def repeat_all_messages(message): # Название функции не играет никакой роли, в принципе
-    bot.send_message(message.chat.id, message.text)
+#@bot.message_handler(content_types=["text"])
+#def repeat_all_messages(message): # Название функции не играет никакой роли, в принципе
+#    bot.send_message(message.chat.id, message.text)
 
 cmd = 'ping google.com -c 3'
 PIPE = subprocess.PIPE
 
-#p = Popen(cmd, shell=True, stdin=PIPE, stdout=PIPE).stdout.read().split()
+p = Popen(cmd, shell=True, stdin=PIPE, stdout=PIPE).stdout.read().split()
 
-p = subprocess.Popen(cmd, shell=True, stdin=PIPE, stdout=PIPE, stderr=subprocess.STDOUT, close_fds=True)
+#p = subprocess.Popen(cmd, shell=True, stdin=PIPE, stdout=PIPE, stderr=subprocess.STDOUT, close_fds=True)
 while True:
     s = p.stdout.readline()
     if not s: break
