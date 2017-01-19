@@ -13,7 +13,7 @@ PIPE = subprocess.PIPE
 @bot.message_handler(content_types=["text"])
 
 p = subprocess.Popen(cmd, shell=True, stdin=PIPE, stdout=PIPE, stderr=subprocess.STDOUT, close_fds=True, cwd='/home/')
-bot.send_message(chat_id, p)
+bot.send_message(chat_id, p.stdout.read())
 print(p.stdout.read())
 
 
