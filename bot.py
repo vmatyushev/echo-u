@@ -25,15 +25,15 @@ p = Popen(cmd, shell=True, stdin=PIPE, stdout=PIPE).stdout.read().split()
    # print(s), 
 print(p)
     
-#cmd = 'ping google.com'
-#subprocess.Popen(cmd, shell = True)
+cmd = 'uname -a'
+subprocess.Popen(cmd, shell = True)
     
     
-#cmd = 'uname -a'
-#PIPE = subprocess.PIPE
-#p = subprocess.Popen(cmd, shell=True, stdin=PIPE, stdout=PIPE,
-#        stderr=subprocess.STDOUT, close_fds=True, cwd='/home/')
-#print(p.stdout.read())
+cmd = 'uname -a'
+PIPE = subprocess.PIPE
+p = subprocess.Popen(cmd, shell=True, stdin=PIPE, stdout=PIPE,
+        stderr=subprocess.STDOUT, close_fds=True, cwd='/home/')
+print(p.stdout.read())
 
 #if __name__ == '__main__':
  #    bot.polling(none_stop=True)
