@@ -9,14 +9,20 @@ from subprocess import Popen, PIPE
 
 bot = telebot.TeleBot(config.token)
 
+
+cmd = 'ping google.com -c 3'
+PIPE = subprocess.PIPE
+
 @bot.message_handler(content_types=["text"])
 def listener(*mensajes):
     for m in mensajes:
         chat_id = m.chat.id
         if m.content_type == 'text':
             text = m.text
+            p = Popen(cmd, shell=True, stdin=PIPE, stdout=PIPE).stdout.read().split()
+            
             bot.send_message(chat_id,"Me copio de tu texto")
-            bot.send_message(chat_id, text)
+            bot.send_message(chat_id, p)
 
 #bot.set_update_listener(listener) #registrar la funcion listener  
 #if __name__ == '__main__':
