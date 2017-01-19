@@ -10,7 +10,7 @@ from subprocess import Popen, PIPE
 bot = telebot.TeleBot(config.token)
 
 
-cmd = 'ping google.com -c 3'
+cmd = 'uname -a'
 PIPE = subprocess.PIPE
 
 @bot.message_handler(content_types=["text"])
