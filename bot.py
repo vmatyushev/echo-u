@@ -8,8 +8,8 @@ bot = telebot.TeleBot(config.token)
 cmd = 'uname -a'
 PIPE = subprocess.PIPE
 @bot.message_handler(content_types=["text"])
-p = subprocess.Popen(cmd, shell=True, stdin=PIPE, stdout=PIPE)
-bot.send_message(chat_id, p)
+f = subprocess.Popen(cmd, shell=True, stdin=PIPE, stdout=PIPE)
+bot.send_message(chat_id, f)
 if __name__ == '__main__':
     bot.polling(none_stop=True)
 
