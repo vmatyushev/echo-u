@@ -5,6 +5,8 @@ import telebot
 
 import subprocess
 
+from subprocess import Popen, PIPE
+
 bot = telebot.TeleBot(config.token)
   
 #@bot.message_handler(content_types=["text"])
