@@ -10,7 +10,7 @@ from subprocess import Popen, PIPE
 bot = telebot.TeleBot(config.token)
 
 
-def listener(*mensajes):
+@def listener(*mensajes):
     for m in mensajes:
         chat_id = m.chat.id
         if m.content_type == 'text':
