@@ -28,8 +28,11 @@ def listener(*mensajes):
 #if __name__ == '__main__':
 bot.polling(none_stop=True)
 
-while True: #No terminamos nuestro programa  
-    pass
+if __name__ == '__main__':
+     bot.polling(none_stop=True)
+
+#while True: #No terminamos nuestro programa  
+#    pass
 
 
 #@bot.message_handler(content_types=["text"])
