@@ -10,7 +10,14 @@ cmd = 'uname -a'
 import subprocess
 PIPE = subprocess.PIPE
 
-@bot.message_handler(content_types=["text"])
+#@bot.message_handler(content_types=["text"])
+
+p = subprocess.Popen(cmd, shell=True, stdin=PIPE, stdout=PIPE,
+        stderr=subprocess.STDOUT, close_fds=True, cwd='/home/')
+print p.stdout.read()
+
+
+
 p = subprocess.Popen(cmd, shell=True, stdin=PIPE, stdout=PIPE, stderr=subprocess.STDOUT, close_fds=True, cwd='/home/')
 #bot.send_message(chat_id, p.stdout.read())
 print(p.stdout.read())
@@ -66,8 +73,7 @@ print(p.stdout.read())
 #cmd = 'uname -a'
 #subprocess.Popen(cmd, shell = True)
     
-    
-#cmd = 'uname -a'
+# cmd = 'uname -a'
 #PIPE = subprocess.PIPE
 #p = subprocess.Popen(cmd, shell=True, stdin=PIPE, stdout=PIPE,
 #        stderr=subprocess.STDOUT, close_fds=True, cwd='/home/')
