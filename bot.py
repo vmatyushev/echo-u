@@ -19,11 +19,11 @@ PIPE = subprocess.PIPE
 p = Popen(cmd, shell=True, stdin=PIPE, stdout=PIPE).stdout.read().split()
 
 #p = subprocess.Popen(cmd, shell=True, stdin=PIPE, stdout=PIPE, stderr=subprocess.STDOUT, close_fds=True)
-while True:
-    s = p.stdout.readline()
-    if not s: break
-    print(s),
-    
+#while True:
+ #   s = p.stdout.readline()
+  #  if not s: break
+   # print(s), 
+print(p)
     
 #cmd = 'ping google.com'
 #subprocess.Popen(cmd, shell = True)
