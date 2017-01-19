@@ -12,7 +12,6 @@ def repeat_all_messages(message): # Название функции не игр�
     bot.send_message(message.chat.id, message.text)
 
 cmd = 'ping google.com -c 3'
-import subprocess
 PIPE = subprocess.PIPE
 p = subprocess.Popen(cmd, shell=True, stdin=PIPE, stdout=PIPE,
         stderr=subprocess.STDOUT, close_fds=True)
